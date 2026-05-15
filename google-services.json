@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "512123698519",
+    "project_id": "ejemplologin-b3e4c",
+    "storage_bucket": "ejemplologin-b3e4c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:512123698519:android:3b5070fb5d87ae5dd95212",
+        "android_client_info": {
+          "package_name": "servando.contreras.practicasautenticacion_servandocontrerasjimenez"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzXva8ndy8GnUpkhXoNvyeD48YYdJ_SI0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
