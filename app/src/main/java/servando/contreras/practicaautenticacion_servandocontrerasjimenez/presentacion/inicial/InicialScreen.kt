@@ -50,7 +50,7 @@ fun InicialScreen(navigationToLogin: () -> Unit = {}, naviationToSignUp: () -> U
         Text("Millons of songs.", color = Color.White, fontSize = 38.sp, fontWeight = FontWeight.Bold)
         Text("Free on Spotify", color = Color.White, fontSize = 38.sp, fontWeight = FontWeight.Bold)
         Spacer(modifier = Modifier.weight(1f))
-        Button(onClick = {naviationToSignUp()}, modifier = Modifier.fillMaxSize().padding(32.dp), colors = ButtonDefaults.buttonColors(containerColor = Green)) {
+        Button(onClick = {naviationToSignUp()}, modifier = Modifier.fillMaxWidth().padding(32.dp), colors = ButtonDefaults.buttonColors(containerColor = Green)) {
             Text(text = "Sign up Free", color = Black, fontWeight = FontWeight.Bold)
         }
         Spacer(modifier = Modifier.height(8.dp))

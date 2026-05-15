@@ -3,8 +3,8 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     id("com.google.gms.google-services")
     id("org.jetbrains.kotlin.android")
+    id("com.google.firebase.crashlytics")
 }
-
 android {
     namespace = "servando.contreras.practicaautenticacion_servandocontrerasjimenez"
 
@@ -34,21 +34,18 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
-
-    buildFeatures {
-        compose = true
-    }
-    kotlinOptions {
-        jvmTarget = "11"
+    kotlin {
+        compilerOptions {
+            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11)
+        }
     }
 }
 
 dependencies {
-
     implementation(platform("com.google.firebase:firebase-bom:34.13.0"))
 
-    implementation(libs.firebase.auth)
-    implementation(libs.firebase.crashlytics)
+    implementation("com.google.firebase:firebase-auth")
+    implementation("com.google.firebase:firebase-crashlytics")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

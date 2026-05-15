@@ -9,9 +9,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
-import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.auth
 import servando.contreras.practicaautenticacion_servandocontrerasjimenez.ui.theme.PracticaAutenticacion_ServandoContrerasJimenezTheme
 
 class MainActivity : ComponentActivity() {
@@ -21,7 +19,7 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        auth = Firebase.auth
+        auth = FirebaseAuth.getInstance()
         setContent {
             navHostController = rememberNavController()
 

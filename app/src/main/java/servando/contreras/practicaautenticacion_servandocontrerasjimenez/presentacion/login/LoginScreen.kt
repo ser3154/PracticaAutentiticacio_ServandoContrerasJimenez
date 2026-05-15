@@ -38,26 +38,47 @@ fun LoginScreen(auth: FirebaseAuth) {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
 
-    Column(modifier = Modifier.fillMaxSize().background(Black).padding(horizontal = 32.dp), horizontalAlignment = Alignment.CenterHorizontally) {
-
+    Column(
+        modifier = Modifier.fillMaxSize().background(Black).padding(horizontal = 32.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Spacer(Modifier.height(48.dp))
 
         Text("Email", color = White, fontWeight = FontWeight.Bold, fontSize = 40.sp)
-        TextField(value = email, onValueChange = {email = it}, modifier = Modifier.fillMaxWidth(), colors = TextFieldDefaults.colors(unfocusedContainerColor = UnselectedField, focusedContainerColor = SelectedField))
+        TextField(
+            value = email,
+            onValueChange = { email = it },
+            modifier = Modifier.fillMaxWidth(),
+            colors = TextFieldDefaults.colors(
+                unfocusedContainerColor = UnselectedField,
+                focusedContainerColor = SelectedField
+            )
+        )
         Spacer(Modifier.height(40.dp))
 
         Text("Password", color = White, fontWeight = FontWeight.Bold, fontSize = 40.sp)
-        TextField(value = password, onValueChange = {password = it}, modifier = Modifier.fillMaxWidth(), colors = TextFieldDefaults.colors(unfocusedContainerColor = UnselectedField, focusedContainerColor = SelectedField))
-    }
-    Spacer(Modifier.height(48.dp))
-    Button(onClick = {
-        auth.signInWithEmailAndPassword(email, password).addOnCompleteListener {task ->
-            if (task.isSuccessful){
-                Log.i("aris", "LOGIN OK")
-            }else{
-                Log.i("aris", "LOGIN KO")
-            }
+        TextField(
+            value = password,
+            onValueChange = { password = it },
+            modifier = Modifier.fillMaxWidth(),
+            colors = TextFieldDefaults.colors(
+                unfocusedContainerColor = UnselectedField,
+                focusedContainerColor = SelectedField
+            )
+        )
+
+        Spacer(Modifier.height(48.dp))
+
+        Button(
+            onClick = {
+                auth.signInWithEmailAndPassword(email, password).addOnCompleteListener { task ->
+                    if (task.isSuccessful) Log.i("aris", "LOGIN OK")
+                    else Log.i("aris", "LOGIN KO")
+                }
+            },
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text(text = "Login")
         }
-    }) {
-        Text(text = "Login")
     }
 }
