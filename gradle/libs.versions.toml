@@ -11,6 +11,7 @@ composeBom = "2026.02.01"
 navogationCompose = "2.7.7"
 firebaseBom = "34.13.0"
 
+
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -31,6 +32,9 @@ firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "fir
 
 firebase-auth = { module = "com.google.firebase:firebase-auth-ktx", version.ref = "firebaseBom" }
 firebase-crashlytics = { module = "com.google.firebase:firebase-crashlytics-ktx", version.ref = "firebaseBom" }
+
+firebase-firestore = {module = "com.google.firebase:firebase-firestore"}
+
 
 androidx-navigation-compose = {module = "androidx.navigation:navigation-compose", version.ref = "navogationCompose"}
 

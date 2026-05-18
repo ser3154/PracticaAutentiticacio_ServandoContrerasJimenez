@@ -5,6 +5,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+import servando.contreras.practicaautenticacion_servandocontrerasjimenez.presentacion.home.HomeScreen
 import servando.contreras.practicaautenticacion_servandocontrerasjimenez.presentacion.inicial.InicialScreen
 import servando.contreras.practicaautenticacion_servandocontrerasjimenez.presentacion.login.LoginScreen
 import servando.contreras.practicaautenticacion_servandocontrerasjimenez.presentacion.signup.SignUpScreen
@@ -12,7 +14,7 @@ import servando.contreras.practicaautenticacion_servandocontrerasjimenez.present
 @Composable
 fun NavigationWrapper(navHostController: NavHostController, auth: FirebaseAuth){
 
-    NavHost(navHostController, startDestination = "inicial"){
+    NavHost(navHostController, startDestination = "home"){
         composable("inicial"){
             InicialScreen(
                 navigationToLogin = {navHostController.navigate("login")},
@@ -20,10 +22,13 @@ fun NavigationWrapper(navHostController: NavHostController, auth: FirebaseAuth){
             )
         }
         composable("Login"){
-            LoginScreen(auth)
+            LoginScreen(auth){navHostController.navigate("home")}
         }
         composable("signUp") {
             SignUpScreen(auth)
+        }
+        composable("home"){
+            HomeScreen()
         }
     }
 

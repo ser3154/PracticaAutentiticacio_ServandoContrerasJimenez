@@ -9,7 +9,10 @@ import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.firestore
 import servando.contreras.practicaautenticacion_servandocontrerasjimenez.ui.theme.PracticaAutenticacion_ServandoContrerasJimenezTheme
 
 class MainActivity : ComponentActivity() {

@@ -34,7 +34,7 @@ import servando.contreras.practicaautenticacion_servandocontrerasjimenez.ui.them
 import servando.contreras.practicaautenticacion_servandocontrerasjimenez.ui.theme.UnselectedField
 
 @Composable
-fun LoginScreen(auth: FirebaseAuth) {
+fun LoginScreen(auth: FirebaseAuth, navigateToHome: () -> Unit) {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
 
